@@ -15,6 +15,21 @@ public class TrainNetworkTest {
     public void distanceBetweenTwoStations() {
        TrainNetwork network = new TrainNetwork();
        network.addStation("AB1");
-       assertEquals(1, network.distanceBetween("A", "B"));
+       assertEquals(network.distanceBetween("A", "B"), 1);
+    }
+
+    @Test
+    public void differentDistanceBetweenTwoStations() {
+        TrainNetwork network = new TrainNetwork();
+        network.addStation("AB2");
+        assertEquals(network.distanceBetween("A", "B"), 2);
+    }
+
+    @Test
+    public void distanceWhenGivenMultipleStationPairs() {
+       TrainNetwork network  = new TrainNetwork();
+       network.addStation("AB1");
+       network.addStation("BC2");
+       assertEquals(network.distanceBetween("A", "B"), 1);
     }
 }
