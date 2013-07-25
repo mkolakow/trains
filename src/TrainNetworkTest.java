@@ -1,4 +1,7 @@
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import java.util.Arrays;
 
 import static org.testng.Assert.assertEquals;
 
@@ -11,25 +14,36 @@ import static org.testng.Assert.assertEquals;
  */
 public class TrainNetworkTest {
 
+    TrainNetwork network;
+
+    @BeforeMethod
+    public void setup() {
+       network = new TrainNetwork();
+    }
+
     @Test
     public void distanceBetweenTwoStations() {
-       TrainNetwork network = new TrainNetwork();
        network.addStation("AB1");
        assertEquals(network.distanceBetween("A", "B"), 1);
     }
 
     @Test
     public void differentDistanceBetweenTwoStations() {
-        TrainNetwork network = new TrainNetwork();
         network.addStation("AB2");
         assertEquals(network.distanceBetween("A", "B"), 2);
     }
 
     @Test
     public void distanceWhenGivenMultipleStationPairs() {
-       TrainNetwork network  = new TrainNetwork();
        network.addStation("AB1");
        network.addStation("BC2");
        assertEquals(network.distanceBetween("A", "B"), 1);
+    }
+
+    @Test
+    public void distanceBetweenThreeStations() {
+        network.addStation("AB1");
+        network.addStation("BC2");
+        assertEquals(network.routeDistance(Arrays.asList("A", "B", "C")), 3);
     }
 }
