@@ -12,3 +12,17 @@ Ok - so I think of gotten so used to writing mostly in Groovy, that I forget how
 little things that make the difference, like not having to fuss about getting an integer from a string.
 
 
+2013-07-25
+
+Now that I've got the basic framework set up, I think it's time to include the full list in the setup, as opposed to
+my simple test data. Keep the first tests simple, but I have a sample set (from the problem) so I can use that now.
+
+Also, I'm install zsh, so I get oh-my-zsh up and running. Been using it at work and amazed at how much I miss it!
+
+OK - I'm bending things a bit. Supposed to output "No such route" if there isn't one. But I'm returning ints for the
+distance, because that makes sense. In the absence of talking to the customer, I'm going to simply throw an exception
+if this is the case. I could make my own "NoSuchRouteException", but I'll defer that decision until later, it's easy
+anyhow. As for the really returning it, well, that's pretty easy too. But I think that should be up to the calling code.
+
+
+

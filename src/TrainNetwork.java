@@ -17,6 +17,12 @@ public class TrainNetwork {
 
     private Map<String, Integer> stationPairInfo;
 
+    public void addStationList(List<String> stations) {
+        for( String station : stations ) {
+            addStation( station );
+        }
+    }
+
     public void addStation(String stationPair) {
         //this is kludgy, but could be factored out. Maybe use regex?
         String stations = stationPair.substring(0,2);
@@ -38,6 +44,12 @@ public class TrainNetwork {
     public int distanceBetween(String a, String b) {
         //get the station pair we want
         Integer distance = stationPairInfo.get(a + b);
+
+        if( distance == null ) {
+            throw new RuntimeException("NO SUCH ROUTE!");
+        }
+
         return distance;
     }
+
 }
