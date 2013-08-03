@@ -67,4 +67,16 @@ public class TrainNetworkTest {
             assertEquals(e.getMessage(), "NO SUCH ROUTE!");
         }
     }
+
+    @Test
+    public void numTrips() {
+        assertEquals(network.numTrips( "C", 3 ), 2);
+    }
+
+
+    @Test
+    public void recEmpty() {
+        network.addStationList(Arrays.<String>asList());
+        assertEquals(Arrays.asList(), network.rec(Arrays.asList()));
+    }
 }

@@ -24,5 +24,17 @@ distance, because that makes sense. In the absence of talking to the customer, I
 if this is the case. I could make my own "NoSuchRouteException", but I'll defer that decision until later, it's easy
 anyhow. As for the really returning it, well, that's pretty easy too. But I think that should be up to the calling code.
 
+2013-07-27
 
+I've got about a half hour while the wife is taking a nap. Then we go on date night. Anyhow - have been trying to
+think about solving the next problem. I think if I make things a bit more generic, then that might work.
+
+2013-08-02
+
+At No Fluff, Just Stuff and finally finding some time to work on this. Was good going to sessions today.
+Ok, this problem is kicking my butt. I think I need to think recursively...I'm trying to do it the other way, and
+it's not working.
+
+Uggh, it's like 1am. But it works, or seems to. Time for bed. I really need to practice this sort of thing. Was
+way harder than I thought.
 

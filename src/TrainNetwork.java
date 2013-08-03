@@ -1,6 +1,4 @@
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -52,4 +50,60 @@ public class TrainNetwork {
         return distance;
     }
 
+    //network.addStationList( Arrays.asList( "AB5", "BC4", "CD8", "DC8", "DE6", "AD5", "CE2", "EB3", "AE7"));
+    public int numTrips(String station, int maxStops) {
+        int trips = 0;
+        int stops = 0;
+
+        Iterator it = this.stationPairInfo.keySet().iterator();
+        while( it.hasNext() ) {
+            String name = (String) it.next();
+            if( name.startsWith(station) ) {
+                stops = 0;
+                Iterator<String> start =  this.stationPairInfo.keySet().iterator();
+                String nextStation = name.substring(1,2);
+                while( stops < maxStops && start.hasNext() ) {
+                    String check = start.next();
+                    if( check.startsWith(nextStation)) {
+                        if( check.endsWith(station)) {
+                            trips++;
+                            stops = 0;
+                        } else {
+                            stops++;
+                            nextStation = check.substring(1,2);
+                            start = this.stationPairInfo.keySet().iterator();
+                        }
+                    }
+                }
+            }
+        }
+
+        return trips;
+    }
+
+    private List<List<String>> generateRouteList(String station ) {
+        List<List<String>> results = new ArrayList<List<String>>();
+
+        List<String> singleRoute = new ArrayList<String>();
+        List<String> list = getAllStationsBeginningWith(station);
+
+
+        return results;
+    }
+
+    private List<String> getAllStationsBeginningWith(String station) {
+        List<String> stationPairs = new ArrayList<String>();
+
+        for( String stationPair : this.stationPairInfo.keySet() ) {
+            if( station.startsWith( station ) ) {
+                stationPairs.add(stationPair);
+            }
+        }
+
+        return stationPairs;
+    }
+
+    public List<Object> rec(List<Object> objects) {
+        return null;  //To change body of created methods use File | Settings | File Templates.
+    }
 }
