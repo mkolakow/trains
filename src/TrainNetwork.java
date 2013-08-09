@@ -54,6 +54,7 @@ public class TrainNetwork {
     public int numTrips(String station, int maxStops) {
         int trips = 0;
         int stops = 0;
+        Stack<String> stations = new Stack<String>();
 
         Iterator it = this.stationPairInfo.keySet().iterator();
         while( it.hasNext() ) {
@@ -65,30 +66,27 @@ public class TrainNetwork {
                 while( stops < maxStops && start.hasNext() ) {
                     String check = start.next();
                     if( check.startsWith(nextStation)) {
+                        stations.push(check);
                         if( check.endsWith(station)) {
                             trips++;
-                            stops = 0;
+                            stops--;
+                            stations.pop();
+                            nextStation = stations.pop().substring(0,1);
                         } else {
                             stops++;
                             nextStation = check.substring(1,2);
                             start = this.stationPairInfo.keySet().iterator();
                         }
                     }
+                    if( ! (start.hasNext()) && ! stations.empty() ) {
+                        stations.pop();
+                        start = this.stationPairInfo.keySet().iterator();
+                    }
                 }
             }
         }
 
         return trips;
-    }
-
-    private List<List<String>> generateRouteList(String station ) {
-        List<List<String>> results = new ArrayList<List<String>>();
-
-        List<String> singleRoute = new ArrayList<String>();
-        List<String> list = getAllStationsBeginningWith(station);
-
-
-        return results;
     }
 
     private List<String> getAllStationsBeginningWith(String station) {
@@ -103,7 +101,4 @@ public class TrainNetwork {
         return stationPairs;
     }
 
-    public List<Object> rec(List<Object> objects) {
-        return null;  //To change body of created methods use File | Settings | File Templates.
-    }
 }

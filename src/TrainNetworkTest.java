@@ -70,13 +70,7 @@ public class TrainNetworkTest {
 
     @Test
     public void numTrips() {
-        assertEquals(network.numTrips( "C", 3 ), 2);
+        assertEquals(network.numTrips( "C", 5 ), 2);
     }
 
-
-    @Test
-    public void recEmpty() {
-        network.addStationList(Arrays.<String>asList());
-        assertEquals(Arrays.asList(), network.rec(Arrays.asList()));
-    }
 }

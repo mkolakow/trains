@@ -38,3 +38,18 @@ it's not working.
 Uggh, it's like 1am. But it works, or seems to. Time for bed. I really need to practice this sort of thing. Was
 way harder than I thought.
 
+2013-08-05
+
+Getting to sit down again for a few minutes. Was hoping to do more at NFJS, but that was unrealistic. Anyhow, looking
+at my other stuff, I really need a graph. Thing is, I'm a bit weak in graph theory. I'd love to sit down and go through
+it, but now is not the time. I'm already behind on this assignment. I will keep that in mind for the future though!
+
+2013-08-08
+
+Finally getting to sit down again - I've got about a half hour this evening. Got home from work, dinner with wife, and
+now some time. In any case, a few things dawned on me as I looked at my old algorithm. Thought I'd run it through the
+debugger one more time. Sure enough, a solution emerged. Now I realize, I'm still not using a graph, but let's see
+where this goes. Also, could use some serious refactoring and method extraction.
+
+
+
